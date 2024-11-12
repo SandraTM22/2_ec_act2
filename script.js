@@ -37,7 +37,7 @@ function updateCartDisplay() {
 }
 
 /**
- * Añade el elemento al array Cart y
+ * Añade el elemento al array cartProducts y
  * llama a la funcion para actualizar el carrito
  * @param {string} name
  * @param {number} price
