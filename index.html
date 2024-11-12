@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante Online</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Restaurante Comida Rápida</h1>
+      <!-- cuando hagamos clicl en el carrito -->
+      <div id="cart-icon" onclick="toggleCart()">
+        🛒 <span id="cart-count">0</span>
+      </div>
+    </header>
+
+    <main>
+      <section id="menu">
+        <h2>Menú</h2>
+        <!-- cada producto lo presentamos como un dia. Será un objeto que tiene nombre y precio.
+        Cuando se accione el boton de cada producto se llama a la funcion addToCart -->
+
+        <div class="product">
+          <h3>Pizza Margarita</h3>
+          <p>10.00€</p>
+          <button onclick="addToCart('Pizza Margarita', 10)">
+            Añadir al Carrito
+          </button>
+        </div>
+
+        <div class="product">
+          <h3>Hamburguesa Super</h3>
+          <p>8.00€</p>
+          <button onclick="addToCart('Hamburguesa Clásica', 8)">
+            Añadir al Carrito
+          </button>
+        </div>
+
+        <div class="product">
+          <h3>Ensalada César</h3>
+          <p>7.00€</p>
+          <button onclick="addToCart('Ensalada César', 7)">
+            Añadir al Carrito
+          </button>
+        </div>
+
+        <div class="product">
+          <h3>Pasta Carbonara</h3>
+          <p>12.00€</p>
+          <button onclick="addToCart('Pasta Carbonara', 12)">
+            Añadir al Carrito
+          </button>
+        </div>
+      </section>
+
+      <!-- Modal del carrito -->
+      <div id="cart-modal" class="modal hidden">
+        <div class="modal-content">
+          <span class="close-button" onclick="toggleCart()">✖</span>
+          <h2>Carrito</h2>
+          <ul id="cart-list">
+            <!-- Aquí aparecerán los productos añadidos al carrito -->
+          </ul>
+          <p id="cart-empty">El carrito está vacío.</p>
+          <button id="clear-cart">Vaciar Carrito</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="cart.tests.js"></script>
+  </body>
+</html>
