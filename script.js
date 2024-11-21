@@ -11,7 +11,7 @@ function updateCartDisplay() {
   const clearCart = document.getElementById("clear-cart");
 
   // Limpiamos la lista y actualizamos el contador de productos en el ícono del carrito
-  cartList.innerHTML = "";
+  cartList.innerHTML = "<br>";
   cartCount.textContent = cartProducts.length;
 
   // Si el array del carrito esta vacio
@@ -70,7 +70,7 @@ updateCartDisplay();
 
 // Para hacer las pruebas, tenemos que exportar las funciones a probar
 module.exports = {
-    addToCart,
-    updateCartDisplay,
-    toggleCart
-  };
+  addToCart,
+  updateCartDisplay,
+  toggleCart
+};
