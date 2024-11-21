@@ -35,16 +35,3 @@ describe('Pruebas en el carrito de compras', () => {
     expect(cartList.innerHTML).toBe(''); // Verifica que el carrito está vacío
   });
 });
-
-
-
-
-
-
-
-
-//Prueba para agregar producto
-// test(' Debe de agregar un producto al carrito', () => {
-//     const cartProducts = addToCart("hamburguesa",10);
-//     expect(cartProducts.lenght).toBe("1");
-// })
