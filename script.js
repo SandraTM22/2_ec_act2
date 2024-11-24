@@ -11,7 +11,7 @@ function updateCartDisplay() {
   const clearCart = document.getElementById("clear-cart");
 
   // Limpiamos la lista y actualizamos el contador de productos en el ícono del carrito
-  cartList.innerHTML = "<br>";
+  cartList.innerHTML = "";
   cartCount.textContent = cartProducts.length;
 
   // Si el array del carrito esta vacio
@@ -65,12 +65,16 @@ function toggleCart() {
 
 /**
  * Vacia el carrito y llama a updateCartDisplay
- * @param {number} id del elemento
- */
-document.getElementById("clear-cart").addEventListener("click", function () {
-  cartProducts = [];
-  updateCartDisplay();
-});
+*/
+const clearCartButton = document.getElementById("clear-cart");
+//Si el boton esta definido en el DOM entonces..
+if(clearCartButton){
+  clearCartButton.addEventListener("click", function () {
+    cartProducts = [];
+    updateCartDisplay();
+  });
+}
+
 
 // Finalmente llamamos a la fuccion para que actualice el carrito
 updateCartDisplay();
@@ -79,5 +83,4 @@ updateCartDisplay();
 module.exports = {
   addToCart,
   updateCartDisplay,
-  toggleCart
 };
