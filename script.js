@@ -28,11 +28,18 @@ function updateCartDisplay() {
 
     /* Para cada elemento del carrito, se cree un elemento <li></li>
     Se rellene con el nombre y el precio y se agrega el nuevo elemento en el html */
-    cartProducts.forEach((item) => {
+    /*cartProducts.forEach((item) => {
       const listItem = document.createElement("li");
       listItem.textContent = `${item.name} - ${item.price}€`;
       cartList.appendChild(listItem);
-    });
+    });*/
+
+    // Si existe cartList en el DOM entonces le añade el html...
+    if (cartList) {
+      cartList.innerHTML = cartProducts
+          .map(product => `<li>${product.name} - ${product.price}€</li>`) //se transforma cada producto en una cadena de texto con el formato que le hemos dado
+          .join(''); //Se juntan todas las cadenas de texto ya que innerHTML solo espera una cadena
+    }   
   }
 }
 
