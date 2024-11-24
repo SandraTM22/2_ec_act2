@@ -66,17 +66,20 @@ function toggleCart() {
 /**
  * Vacia el carrito y llama a updateCartDisplay
 */
-const clearCartButton = document.getElementById("clear-cart");
-//Si el boton esta definido en el DOM entonces..
-if(clearCartButton){
-  clearCartButton.addEventListener("click", function () {
-    cartProducts = [];
-    updateCartDisplay();
-  });
+function setupClearCartButton() {
+  const clearCartButton = document.getElementById("clear-cart");
+  //Si el boton esta definido en el DOM entonces..
+  if(clearCartButton){
+    clearCartButton.addEventListener("click", function () {
+      cartProducts = [];
+      updateCartDisplay();
+    });
+  }
 }
 
 
-// Finalmente llamamos a la fuccion para que actualice el carrito
+
+// Finalmente llamamos a la función para que actualice el carrito
 updateCartDisplay();
 
 // Para hacer las pruebas, tenemos que exportar las funciones a probar
