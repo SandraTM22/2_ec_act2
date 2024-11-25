@@ -104,6 +104,7 @@ button:hover {
 
 /* Estilos boton para vaciar el carrito */
 #clear-cart {
+  display: none;
   background-color: #dc3545;
   margin-top: 10px;
   padding: 10px;
