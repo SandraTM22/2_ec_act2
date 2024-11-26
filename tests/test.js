@@ -3,7 +3,7 @@ const {
   addToCart,
   updateCartDisplay,
   setupClearCartButton,
-} = require("./script");
+} = require("../src/script");
 
 describe("Pruebas en el carrito de compras", () => {
   beforeEach(() => {
