@@ -1,3 +1,4 @@
+
 const {
   addToCart,
   updateCartDisplay,
@@ -23,7 +24,6 @@ describe("Pruebas en el carrito de compras", () => {
     addToCart("Pizza Margarita", 10);
     updateCartDisplay();
 
-    // Verificamos que el producto se ha añadido correctamente al carrito
     const cartList = document.getElementById("cart-list");
     expect(cartList.innerHTML).toBe("<li>Pizza Margarita - 10€</li>"); // Verifica que el producto esté en el carrito
   });
