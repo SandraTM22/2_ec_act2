@@ -74,9 +74,8 @@ header {
 }
 
 #cart-list li {
-    padding: 5px;
-  }
-
+  padding: 5px;
+}
 
 /* Estilos para cada producto */
 .product {

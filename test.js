@@ -1,6 +1,10 @@
-const { addToCart, updateCartDisplay, setupClearCartButton } = require('./script');
+const {
+  addToCart,
+  updateCartDisplay,
+  setupClearCartButton,
+} = require("./script");
 
-describe('Pruebas en el carrito de compras', () => {
+describe("Pruebas en el carrito de compras", () => {
   beforeEach(() => {
     // Configuramos el DOM necesario para las pruebas
     document.body.innerHTML = `
@@ -12,30 +16,29 @@ describe('Pruebas en el carrito de compras', () => {
     `;
     // Configura los eventos después de que el DOM esté listo
     setupClearCartButton();
-    
   });
 
-  test('Debe agregar un producto al carrito', () => {
+  test("Debe agregar un producto al carrito", () => {
     // Simulamos añadir un producto al carrito
-    addToCart('Pizza Margarita', 10);
+    addToCart("Pizza Margarita", 10);
     updateCartDisplay();
 
     // Verificamos que el producto se ha añadido correctamente al carrito
-    const cartList = document.getElementById('cart-list');
-    expect(cartList.innerHTML).toBe('<li>Pizza Margarita - 10€</li>'); // Verifica que el producto esté en el carrito
+    const cartList = document.getElementById("cart-list");
+    expect(cartList.innerHTML).toBe("<li>Pizza Margarita - 10€</li>"); // Verifica que el producto esté en el carrito
   });
 
   test('Debe vaciar el carrito cuando se hace click en "Vaciar Carrito"', () => {
     // Añadimos un producto antes de vaciar el carrito
-    addToCart('Pizza Margarita', 10);
+    addToCart("Pizza Margarita", 10);
     updateCartDisplay();
 
     // Simulamos el click en el botón "Vaciar Carrito"
-    const clearCartButton = document.getElementById('clear-cart');
+    const clearCartButton = document.getElementById("clear-cart");
     clearCartButton.click();
 
     // Verificamos que el carrito está vacío
-    const cartList = document.getElementById('cart-list');
-    expect(cartList.innerHTML).toBe('');
+    const cartList = document.getElementById("cart-list");
+    expect(cartList.innerHTML).toBe("");
   });
 });
